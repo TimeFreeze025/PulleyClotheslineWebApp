@@ -1,5 +1,21 @@
-@media (min-width: 544px) {
+/* @media (min-width: 544px) {
 	h1 {
 		font-size: 600px;
 	}
+} */
+
+/*code to change background color*/
+/* #0275d8 */
+/* #c0c0c0 */
+.clicked:active {
+	color: #c0c0c0 !important;
+}
+
+.page-title {
+	background-color: #0275d8;
+	margin: 1rem;
+	border-radius: 0.5rem;
+	color: white;
+	font-weight: bold;
+	line-height: 1.5rem;
 }

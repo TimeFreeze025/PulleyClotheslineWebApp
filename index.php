@@ -7,13 +7,13 @@
 <nav class="navbar navbar-expand fixed-bottom navbar-light bg-light text-black">
   <ul class="navbar-nav nav-justified w-100">
     <li class="nav-item">
-      <a href="./index.php" class="nav-link bi bi-house fa-lg"></a>
+      <a href="./index.php" class="nav-link"><i class="bi bi-house fa-lg text-primary clicked"></i></a>
     </li>
     <li class="nav-item">
-      <a href="./weatherUI.php" class="nav-link bi bi-plus-circle fa-lg"></a>
+      <a href="./weatherUI.php" class="nav-link"><i class="bi bi-plus-circle fa-lg text-primary clicked"></i></a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link bi bi-gear fa-lg"></a>
+      <a href="#" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
     </li>
   </ul>
 </nav>
@@ -29,20 +29,20 @@
     <div class="card-body display-2">30° C</div>
   </div>
 </div> -->
-<p class="py-3 px-3 display-1">Weather <i class="bi bi-cloud-sun"></i></p>
+<p class="py-3 px-3 display-1 text-center page-title">Weather <i class="bi bi-cloud-sun text-white"></i></p>
 <div class="container-fluid mt-3">
   <hr>
   <p class="h4 my-5">Santa Ana, Pampanga</p>
-  <div class="row display-2 mb-5">
+  <div class="row display-2 fw-bold mb-5">
     <div class="col text-center">30°C</div>
     <div class="col text-center">8:00 AM</div>
   </div>
-  <table class="table table-hover table-striped mt-3 text-center">
+  <table class="table table-hover table-striped mt-3 text-center table-border">
     <thead>
-      <tr class="text-center">
-        <th class="col-md-4">Time</th>
-        <th class="col-md-4">Weather</th>
-        <th class="col-md-4">+</th>
+      <tr>
+        <th class="col-md-4 text-primary">Time</th>
+        <th class="col-md-4 text-primary">Weather</th>
+        <th class="col-md-4 text-primary">+</th>
       </tr>
     </thead>
     <tbody>
