@@ -7,6 +7,11 @@
 /*code to change background color*/
 /* #0275d8 */
 /* #c0c0c0 */
+
+div.container-fluid {
+	padding-bottom: 50px;
+}
+
 .clicked:active {
 	color: #c0c0c0 !important;
 }

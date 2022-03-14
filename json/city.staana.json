@@ -1,52 +1,22 @@
 [    
-  {
-      "id": 1688393,
-      "name": "Santa Ana",
-      "state": "",
-      "country": "PH",
-      "coord": {
-          "lon": 122.147751,
-          "lat": 18.46986
-      }
-  },
-  {
-      "id": 1688398,
-      "name": "Santa Ana",
-      "state": "",
-      "country": "PH",
-      "coord": {
-          "lon": 120.766998,
-          "lat": 15.0955
-      }
-  },
-  {
-      "id": 1688411,
-      "name": "Santa Ana",
-      "state": "",
-      "country": "PH",
-      "coord": {
-          "lon": 125.564438,
-          "lat": 9.19278
-      }
-  },
-  {
-      "id": 1688414,
-      "name": "Santa Ana",
-      "state": "",
-      "country": "PH",
-      "coord": {
-          "lon": 124.783333,
-          "lat": 8.51667
-      }
-  },
-  {
-      "id": 1688418,
-      "name": "Santa Ana",
-      "state": "",
-      "country": "PH",
-      "coord": {
-          "lon": 120.75,
-          "lat": 15.11667
-      }
-  }
+    {
+        "id": 1688398,
+        "name": "Santa Ana",
+        "state": "",
+        "country": "PH",
+        "coord":  {
+            "lon": 120.766998,
+            "lat": 15.0955
+        }
+    },
+    {
+        "id": 1688418,
+        "name": "Santa Ana",
+        "state": "",
+        "country": "PH",
+        "coord": {
+            "lon": 120.75,
+            "lat": 15.11667
+        }
+    }
 ]

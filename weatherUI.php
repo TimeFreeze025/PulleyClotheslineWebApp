@@ -32,23 +32,24 @@
         <th class="col-md-4 text-primary">+</th>
       </tr>
     </thead>
+    <?php
+      include './weatherapi.php';
+      do {
+        $timestamp = $weather_data['hourly'][$i]['dt'];
+        $weather_main = $weather_data['hourly'][$i]['weather'][0]['main'];
+        $time = gmdate("h:i A", $timestamp + (8*3600));
+        $i++;
+    ?>
     <tbody>
       <tr>
-        <td>6:00 AM</td>
-        <td>Cloudy</td>
-        <td>Icon</td>
-      </tr>
-      <tr>
-        <td>12:00 NN</td>
-        <td>Rainy</td>
-        <td>Icon</td>
-      </tr>
-      <tr>
-        <td>6:00 PM</td>
-        <td>Sunny</td>
+        <td><?=$time?></td>
+        <td><?=$weather_main?></td>
         <td>Icon</td>
       </tr>
     </tbody>
+    <?php
+      } while ($i <= 12);
+    ?>
   </table>
 </div>
 <!-- End of Container -->

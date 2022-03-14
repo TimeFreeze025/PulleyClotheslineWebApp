@@ -1,6 +1,7 @@
 <?php
   session_start();
 	include './plugins.php';
+  include './weatherapi.php';
 ?>
 
 <!--Start of Navbar-->
@@ -34,8 +35,8 @@
   <hr>
   <p class="h4 my-5">Santa Ana, Pampanga</p>
   <div class="row display-2 fw-bold mb-5">
-    <div class="col text-center">30°C</div>
-    <div class="col text-center">8:00 AM</div>
+    <div class="col text-center"><?=$current_temp?>°C</div>
+    <div id="runningClock" class="col text-center"></div>
   </div>
   <table class="table table-hover table-striped mt-3 text-center table-border">
     <thead>
@@ -45,23 +46,24 @@
         <th class="col-md-4 text-primary">+</th>
       </tr>
     </thead>
+    <?php
+      //include './weatherapi.php';
+      do {
+        $timestamp = $weather_data['hourly'][$i]['dt'];
+        $weather_main = $weather_data['hourly'][$i]['weather'][0]['main'];
+        $time = gmdate("h:i A", $timestamp + (8*3600));
+        $i++;
+    ?>
     <tbody>
       <tr>
-        <td>6:00 AM</td>
-        <td>Cloudy</td>
-        <td>Icon</td>
-      </tr>
-      <tr>
-        <td>12:00 NN</td>
-        <td>Rainy</td>
-        <td>Icon</td>
-      </tr>
-      <tr>
-        <td>6:00 PM</td>
-        <td>Sunny</td>
+        <td><?=$time?></td>
+        <td><?=$weather_main?></td>
         <td>Icon</td>
       </tr>
     </tbody>
+    <?php
+      } while ($i <= 12);
+    ?>
   </table>
 </div>
 <!-- End of Container -->
