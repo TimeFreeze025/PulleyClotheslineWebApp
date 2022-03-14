@@ -54,7 +54,7 @@
       <tr>
         <td>12:00 NN</td>
         <td>Rainy</td>
-        <td>Sunny</td>
+        <td>Icon</td>
       </tr>
       <tr>
         <td>6:00 PM</td>
