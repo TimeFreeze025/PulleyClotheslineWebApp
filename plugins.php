@@ -20,7 +20,7 @@
 			var time = new Date();
 			var hrs = time.getHours();
 			var min = time.getMinutes();
-			var ampm = hrs >= 12 ? 'pm' : 'am';
+			var ampm = hrs >= 12 ? 'PM' : 'AM';
 			hrs = hrs % 12;
 			hrs = hrs ? hrs : 12;
 			min = min < 10 ? '0'+min : min;

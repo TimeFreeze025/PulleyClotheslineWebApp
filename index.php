@@ -4,68 +4,44 @@
   include './weatherapi.php';
 ?>
 
-<!--Start of Navbar-->
-<nav class="navbar navbar-expand fixed-bottom navbar-light bg-light text-black">
-  <ul class="navbar-nav nav-justified w-100">
-    <li class="nav-item">
-      <a href="./index.php" class="nav-link"><i class="bi bi-house fa-lg text-primary clicked"></i></a>
-    </li>
-    <li class="nav-item">
-      <a href="./weatherUI.php" class="nav-link"><i class="bi bi-plus-circle fa-lg text-primary clicked"></i></a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
-    </li>
-  </ul>
-</nav>
-<!--End of Navbar-->
-
 <!-- Start of Container -->
-<!-- <div class="container-fluid mt-3">
-  <p class="mb-3 display-1">Weather</p>
-  <hr>
-  <p class="h4 my-2">Santa Ana, Pampanga</p>
-  <div class="card">
-    <div class="card-header display-6">4:00 AM</div>
-    <div class="card-body display-2">30° C</div>
+<section class="vh-100 h-auto bg-primary">
+  <div class="container-fluid py-5 h-auto bg-primary">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-4">
+        <div class="card shadow-lg" style="border-radius: 2rem;">
+          <div class="card-body p-5">
+            <p class="display-4 text-center fw-bold pb-5">Weather <i class="bi bi-cloud-sun text-black"></i></p>
+            <h3 class="text-center mb-4">Sign in</h3>
+
+            <div class="form-outline mb-4">
+              <input type="email" id="typeEmail" class="form-control form-control-lg" placeholder="Email"/>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" id="typePassword" class="form-control form-control-lg" placeholder="Password"/>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+              <label class="form-check-label" for="flexCheckChecked">
+                <span>Remember Me</span>
+              </label>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary btn-lg" style="border-radius: 2rem;" type="submit">Login</button>
+            </div>
+            <hr class="my-4">
+            <p class="text-center mt-5">Don't have an account?
+              <span class="text-primary">Sign Up</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div> -->
-<p class="py-3 px-3 display-1 text-center page-title">Weather <i class="bi bi-cloud-sun text-white"></i></p>
-<div class="container-fluid mt-3">
-  <hr>
-  <p class="h4 my-5">Santa Ana, Pampanga</p>
-  <div class="row display-2 fw-bold mb-5">
-    <div class="col text-center"><?=$current_temp?>°C</div>
-    <div id="runningClock" class="col text-center"></div>
-  </div>
-  <table class="table table-hover table-striped mt-3 text-center table-border">
-    <thead>
-      <tr>
-        <th class="col-md-4 text-primary">Time</th>
-        <th class="col-md-4 text-primary">Weather</th>
-        <th class="col-md-4 text-primary">+</th>
-      </tr>
-    </thead>
-    <?php
-      //include './weatherapi.php';
-      do {
-        $timestamp = $weather_data['hourly'][$i]['dt'];
-        $weather_main = $weather_data['hourly'][$i]['weather'][0]['main'];
-        $time = gmdate("h:i A", $timestamp + (8*3600));
-        $i++;
-    ?>
-    <tbody>
-      <tr>
-        <td><?=$time?></td>
-        <td><?=$weather_main?></td>
-        <td>Icon</td>
-      </tr>
-    </tbody>
-    <?php
-      } while ($i <= 12);
-    ?>
-  </table>
-</div>
+</section>
 <!-- End of Container -->
 
 <?php
