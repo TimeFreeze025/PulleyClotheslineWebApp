@@ -2,7 +2,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "12252000";
-  $dbname = "db_masterlist";
+  $dbname = "pulley_list";
 
   //create a database connection
   $conn = new mysqli($servername, $username, $password, $dbname);
