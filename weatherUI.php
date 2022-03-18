@@ -1,6 +1,10 @@
 <?php
   session_start();
-	include './plugins.php';
+	include './config/plugins.php';
+
+  if(!isset($_COOKIE['user'])){
+    header("Location:./index.php");
+  }
 ?>
 
 <!--Start of Navbar-->
@@ -13,7 +17,7 @@
       <a href="./weatherUI.php" class="nav-link"><i class="bi bi-plus-circle fa-lg text-primary clicked"></i></a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
+      <a href="./settings.php" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
     </li>
   </ul>
 </nav>
@@ -33,7 +37,7 @@
       </tr>
     </thead>
     <?php
-      include './weatherapi.php';
+      include './config/weatherapi.php';
       do {
         $timestamp = $weather_data['hourly'][$i]['dt'];
         $weather_main = $weather_data['hourly'][$i]['weather'][0]['main'];
@@ -55,5 +59,5 @@
 <!-- End of Container -->
 
 <?php
-session_destroy();
+  //session_destroy();
 ?>

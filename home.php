@@ -1,7 +1,11 @@
 <?php
   session_start();
-	include './plugins.php';
-  include './weatherapi.php';
+	include './config/plugins.php';
+  include './config/weatherapi.php';
+  
+  if(!isset($_COOKIE['user'])){
+    header("Location:./index.php");
+  }
 ?>
 
 <!--Start of Navbar-->
@@ -14,7 +18,7 @@
       <a href="./weatherUI.php" class="nav-link"><i class="bi bi-plus-circle fa-lg text-primary clicked"></i></a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
+      <a href="./settings.php" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
     </li>
   </ul>
 </nav>
@@ -33,7 +37,7 @@
 <p class="py-3 px-3 display-1 text-center page-title">Weather <i class="bi bi-cloud-sun text-white"></i></p>
 <div class="container-fluid mt-3">
   <hr>
-  <p class="h4 my-5">Santa Ana, Pampanga</p>
+  <p class="h1 my-5">Santa Ana, Pampanga</p>
   <div class="row display-2 fw-bold mb-5">
     <div class="col text-center"><?=$current_temp?>°C</div>
     <div id="runningClock" class="col text-center"></div>
@@ -48,11 +52,12 @@
     </thead>
     <?php
       //include './weatherapi.php';
+      $prev_weather_main = "";
       do {
         $timestamp = $weather_data['hourly'][$i]['dt'];
         $weather_main = $weather_data['hourly'][$i]['weather'][0]['main'];
         $homeTime = gmdate("h:i A", $timestamp + (8*3600));
-        $i++;
+        if($weather_main != $prev_weather_main) {
     ?>
     <tbody>
       <tr>
@@ -62,12 +67,15 @@
       </tr>
     </tbody>
     <?php
-      } while ($i <= 12);
+        }
+        $prev_weather_main = $weather_main;
+        $i++;
+      } while ($i <= 16);
     ?>
   </table>
 </div>
 <!-- End of Container -->
 
 <?php
-session_destroy();
+  //session_destroy();
 ?>
