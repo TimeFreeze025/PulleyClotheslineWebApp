@@ -1,7 +1,7 @@
 <?php
   session_start();
 	include './config/plugins.php';
-  include './config/weatherapi.php';
+  require_once "./config/weatherapi.php";
   
   if(!isset($_COOKIE['user'])){
     header("Location:./index.php");
@@ -51,7 +51,6 @@
       </tr>
     </thead>
     <?php
-      //include './weatherapi.php';
       $prev_weather_main = "";
       do {
         $timestamp = $weather_data['hourly'][$i]['dt'];

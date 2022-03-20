@@ -48,7 +48,7 @@
     </div>
   </div>
   <div class="fixed-bottom" style="margin-bottom: 5rem; margin-left: 1rem">
-    <a href="./config/userLogin.php" class="btn btn-primary btn-lg">
+    <a href="./config/userLogout.php" class="btn btn-primary btn-lg">
       <i class="bi bi-box-arrow-right"></i> Logout
     </a>
   </div>

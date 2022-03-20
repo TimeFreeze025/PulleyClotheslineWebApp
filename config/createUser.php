@@ -24,9 +24,6 @@
         echo "ERROR :".$sqlInsertRecord."<br>".$conn->error;
       }
     }
-
-  } else {
-    header("location: ../index.php");
   }
   $conn->close();
 ?>

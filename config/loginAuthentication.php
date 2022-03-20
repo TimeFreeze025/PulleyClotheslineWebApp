@@ -9,12 +9,11 @@
   $result = $conn->query($sqlLogin);
 
   if($result->num_rows > 0){
-    setcookie("user", $username, time()+3600*24*30, '/');
-    header("Location:../home.php");
+    $_SESSION['username'] = $username;
+    header("location:./checkCoords.php");
   }else{
     $_SESSION['error-message'] = "Invalid Username or Password.";
     header("Location:../index.php");
   }
   $conn->close();
-
 ?>
