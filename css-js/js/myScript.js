@@ -44,3 +44,4 @@ var check = function() {
   }
 }
 //End of Confirming Passwords
+

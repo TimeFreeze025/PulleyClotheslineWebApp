@@ -13,9 +13,9 @@
     <li class="nav-item">
       <a href="./home.php" class="nav-link"><i class="bi bi-house fa-lg text-primary clicked"></i></a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a href="./weatherUI.php" class="nav-link"><i class="bi bi-plus-circle fa-lg text-primary clicked"></i></a>
-    </li>
+    </li> -->
     <li class="nav-item">
       <a href="./settings.php" class="nav-link"><i class="bi bi-gear fa-lg text-primary clicked"></i></a>
     </li>
@@ -37,18 +37,19 @@
   <p class="display-1 justify-content-start">Settings</p>
   <hr>
   <div class="my-5">
-    <p class="display-4 fw-bold"><i class="bi bi-binoculars"></i> Sensors</p>
+    <p class="display-4 fw-bold">Sensors</p>
     <div class="mb-3">
       <span class="h5" style="padding-left: 20px">Rain Sensor: </span>
-      <span class="h5 fw-light">Active</span>
+      <span class="h5 fw-light text-primary">Active</span> 
+      <!-- text-danger if disabled or not active -->
     </div>
     <div class="mb-3">
       <span class="h5" style="padding-left: 20px">Smoke Sensor: </span>
-      <span class="h5 fw-light">Active</span>
+      <span class="h5 fw-light text-primary">Active</span>
     </div>
   </div>
-  <div class="fixed-bottom" style="margin-bottom: 5rem; margin-left: 1rem">
-    <a href="./config/userLogout.php" class="btn btn-primary btn-lg">
+  <div class="fixed-bottom container-fluid mb-5">
+    <a href="./config/userLogout.php" class="btn btn-outline-primary btn-lg mb-3 border border-2 border-primary w-100">
       <i class="bi bi-box-arrow-right"></i> Logout
     </a>
   </div>

@@ -27,7 +27,7 @@
 <p class="py-3 px-3 display-1 text-center page-title">Weather <i class="bi bi-cloud-sun text-white"></i></p>
 <div class="container-fluid mt-3">
   <hr>
-  <button type="button" class="btn btn-outline-primary btn-lg mb-3 bi bi-plus-circle border float-end"></button>
+  <button type="button" class="btn btn-outline-primary btn-lg mb-3 bi bi-plus-circle border float-end w-100 border-2 border-primary"> Add</button>
   <table class="table table-hover table-striped mt-3 text-center">
     <thead>
       <tr>
