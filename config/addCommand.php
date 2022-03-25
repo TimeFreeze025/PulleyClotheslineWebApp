@@ -15,7 +15,7 @@
       $_SESSION['error-message'] = "Time and Command Already Set";
       header("Location:../home.php");
     } else {
-      $sqlInsertRecord = "INSERT INTO commands(username, timeCommand, userCommand) values('{$_SESSION['username']}', '{$timeCommand}', '{$userCommand}')";
+      $sqlInsertRecord = "INSERT INTO commands(username, timeCommand, userCommand) values('{$_COOKIE['user']}', '{$timeCommand}', '{$userCommand}')";
   
       if($conn->query($sqlInsertRecord) === TRUE){
         $_SESSION['valid-message'] = "Schedule Successfully Added";

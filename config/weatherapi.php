@@ -14,7 +14,7 @@
     $lat = $rowCoords['Latitude'];
     $lon = $rowCoords['Longitude'];
   }
-  $conn->close();
+  //$conn->close();
 
   $api_key = "10e8d82114cc630c90ac8a9031302134";
   $unit = "metric";

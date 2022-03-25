@@ -1,5 +1,5 @@
 <?php
-  require_once './dbcon.php';
+  require_once "dbcon.php";
 
   $sensor = "waterSensor";
   $sqlLoadSensor = "SELECT * FROM data WHERE sensor_type = '{$sensor}'";
@@ -14,7 +14,13 @@
       } else {
         $waterSensor = "Error";
       }
-      echo "Water Sensor: ".$waterSensor."<br>";
+
+      echo "
+        <div class='mb-3'>
+          <span class='h5' style='padding-left: 20px'>Rain Sensor: </span>
+          <span class='h5 fw-light text-primary'>".$waterSensor."</span> 
+        </div>
+      ";
     }
   }
 
@@ -29,7 +35,13 @@
       } else {
         $smokeSensor = $rowSensor['sensor_value'];
       }
-      echo "Smoke Sensor: ".$smokeSensor. "<br>";
+      
+      echo "
+        <div class='mb-3'>
+          <span class='h5' style='padding-left: 20px'>Smoke Sensor: </span>
+          <span class='h5 fw-light text-primary'>".$smokeSensor."</span> 
+        </div>
+      ";
     }
   }
 
@@ -52,11 +64,17 @@
       } else {
         $wifiStrength = "No Connection";
       }
-      echo "Wifi Values: ".$rowSensor['sensor_value']."<br>";
-      echo "Wifi Strength: ".$wifiStrength. "<br>";
+      echo "
+        <div class='mb-3'>
+          <span class='h5' style='padding-left: 20px'>Wifi Values: </span>
+          <span class='h5 fw-light text-primary'>".$rowSensor['sensor_value']."</span> 
+        </div>
+        <div class='mb-3'>
+          <span class='h5' style='padding-left: 20px'>Wifi Strength: </span>
+          <span class='h5 fw-light text-primary'>".$wifiStrength."</span> 
+        </div>
+      ";
     }
   }
   $conn->close();
-
-  header("Refresh:0");
 ?>

@@ -7,6 +7,16 @@
   }
 ?>
 
+<script>
+  $(document).ready(function(){
+    setInterval(loadValues, 1000);
+  });
+
+  function loadValues() {
+    $("#sensor_values").load("./config/showSensor.php");
+  }
+</script>
+
 <!--Start of Navbar-->
 <nav class="navbar navbar-expand fixed-bottom navbar-light bg-light text-black">
   <ul class="navbar-nav nav-justified w-100">
@@ -24,38 +34,19 @@
 <!--End of Navbar-->
 
 <!-- Start of Container -->
-<!-- <p class="py-3 px-3 display-1 text-center page-title">Weather <i class="bi bi-cloud-sun text-white"></i></p>
-<div class="container-fluid mt-3 mx-2">
-  <div class="col-6">
-    <input type="text" id="txtLatitude" class="form-control form-control-lg mb-4">
-    <input type="text" id="txtLongitude" class="form-control form-control-lg mb-4">
-  </div>
-  <button class="btn btn-primary btn-lg" onclick="getLocation()">Try It</button>
-</div> -->
-
 <div class="container-fluid mt-3">
   <p class="display-1 justify-content-start">Settings</p>
   <hr>
-  <div class="my-5">
-    <p class="display-4 fw-bold">Sensors</p>
-    <div class="mb-3">
-      <span class="h5" style="padding-left: 20px">Rain Sensor: </span>
-      <span class="h5 fw-light text-primary">Active</span> 
-      <!-- text-danger if disabled or not active -->
-    </div>
-    <div class="mb-3">
-      <span class="h5" style="padding-left: 20px">Smoke Sensor: </span>
-      <span class="h5 fw-light text-primary">Active</span>
-    </div>
+  <p class="display-4 fw-bold mt-4">Sensors</p>
+  <div class="my-3" id="sensor_values">
+    <?php
+      include './config/showSensor.php';
+    ?>
   </div>
   <div class="fixed-bottom container-fluid mb-5">
-    <a href="./config/userLogout.php" class="btn btn-outline-primary btn-lg mb-3 border border-2 border-primary w-100">
-      <i class="bi bi-box-arrow-right"></i> Logout
-    </a>
+    <a href="./config/userLogout.php" class="btn btn-outline-primary btn-lg mb-3 border border-2 border-primary w-100"><i class="bi bi-box-arrow-right"></i> Logout</a>
   </div>
 </div>
-
-
 <!-- End of Container -->
 
 <?php

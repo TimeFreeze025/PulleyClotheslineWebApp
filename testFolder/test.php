@@ -1,7 +1,7 @@
 
 
 
-<form action="./updateSensor.php" method="get">
+<form action="../config/updateSensor.php" method="get">
   <!-- <input type="text" name="sensor"> -->
   <input type="text" name="water_value">
   <input type="text" name="smoke_value">

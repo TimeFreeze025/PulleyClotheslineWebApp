@@ -5,6 +5,9 @@
   $username = $_POST['loginUsername'];
   $password = $_POST['loginPassword'];
 
+  $username = $conn->real_escape_string($username);
+  $password = $conn->real_escape_string($password);
+
   $sqlLogin = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}'";
   $result = $conn->query($sqlLogin);
 

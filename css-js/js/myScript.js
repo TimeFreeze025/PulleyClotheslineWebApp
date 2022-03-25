@@ -14,6 +14,7 @@ function runningClock() {
 }
 //End of Current Time
 
+
 //Start of Geolocation API
 function getLocation() {
   if (navigator.geolocation) {

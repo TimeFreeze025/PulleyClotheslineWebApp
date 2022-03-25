@@ -1,4 +1,6 @@
 <?php
+  //http://localhost/PULLEYCLOTHESLINEWEBAPP/config/updateSensor.php?water_value={}&smoke_value={}&wifi_strength={}
+
   require_once './dbcon.php';
 
   $sensor = "waterSensor";

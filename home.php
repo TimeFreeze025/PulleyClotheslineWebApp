@@ -40,22 +40,13 @@
 <!--End of Navbar-->
 
 <!-- Start of Container -->
-<!-- <div class="container-fluid mt-3">
-  <p class="mb-3 display-1">Weather</p>
-  <hr>
-  <p class="h4 my-2">Santa Ana, Pampanga</p>
-  <div class="card">
-    <div class="card-header display-6">4:00 AM</div>
-    <div class="card-body display-2">30° C</div>
-  </div>
-</div> -->
 <p class="py-3 px-3 display-1 text-center page-title">Weather <i class="bi bi-cloud-sun text-white"></i></p>
 <div class="container-fluid mt-3">
   <hr>
   <!-- <p class="h1 my-5">Santa Ana, Pampanga</p> -->
   <div class="row display-2 fw-bold my-5">
     <div class="col text-center"><?=$current_temp?>°C</div>
-    <div id="runningClock" class="col text-center"></div>
+    <div id="runningClock" class="col text-center" name="runningClock"></div>
   </div>
   <!-- <button type="button" class="btn btn-outline-primary btn-lg mb-3 bi bi-plus-circle border float-end w-100 border-2 border-primary"> Add</button> -->
   <table class="table table-hover table-striped mt-3 text-center table-border">
@@ -118,7 +109,7 @@
     ?>
     <tbody>
       <tr>
-        <td><?=$time;?></td>
+        <td><?=$time?></td>
         <td><?=$rowCommands['userCommand']?></td> 
         <td><a href="" data-bs-toggle="modal" data-bs-target="#editCommand<?=$rowCommands['id']?>"><i class="fa fa-pencil alert-warning bg-transparent"></i></a></td>
         <td><a href="./config/deleteCommand.php/?timeCommand=<?=$rowCommands['timeCommand']?>" onclick="confirmAction()"><i class="fa fa-trash alert-danger bg-transparent"></i></a></td>
