@@ -1,6 +1,7 @@
 <?php
   // Coords of Santa Ana, Pampanga, Philippines
-  // https://api.openweathermap.org/data/2.5/onecall?lat=15.1376&lon=120.7118&units=metric&exclude=current,minutely,daily,alerts&appid=24c30a0bb417a2bfa2c4893d01649d0c
+  // https://api.openweathermap.org/data/2.5/onecall?lat=15.1376&lon=120.7118&units=metric&exclude=current,minutely,daily,alerts&appid=10e8d82114cc630c90ac8a9031302134
+  //10e8d82114cc630c90ac8a9031302134
   //55899272efa5cfab3bf05c95327d7e84
   //15.1376, 120.7118
 
@@ -16,7 +17,7 @@
   }
   //$conn->close();
 
-  $api_key = "10e8d82114cc630c90ac8a9031302134";
+  $api_key = "55899272efa5cfab3bf05c95327d7e84";
   $unit = "metric";
   $exclude = "current,minutely,daily,alerts";
   $api_url = "https://api.openweathermap.org/data/2.5/onecall?lat=" .$lat. "&lon=" .$lon. "&units=" .$unit. "&exclude=" .$exclude. "&appid=" .$api_key;

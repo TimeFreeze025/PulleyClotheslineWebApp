@@ -21,6 +21,22 @@
     }
   }
   //End of Confirm User Action
+
+  $(document).ready(function(){
+    setInterval(loadWeather, 1800000);
+  });
+
+  function loadWeather() {
+    $("#load_weather").load("../weatherTable.php");
+  }
+
+  $(document).ready(function(){
+    setInterval(compareSched, 1000);
+  });
+
+  function compareSched() {
+    $("#compare_sched").load("./config/compareSchedule.php");
+  }
 </script>
 
 <!--Start of Navbar-->
@@ -49,35 +65,11 @@
     <div id="runningClock" class="col text-center" name="runningClock"></div>
   </div>
   <!-- <button type="button" class="btn btn-outline-primary btn-lg mb-3 bi bi-plus-circle border float-end w-100 border-2 border-primary"> Add</button> -->
-  <table class="table table-hover table-striped mt-3 text-center table-border">
-    <p class="display-6 fs-3">Weather Forecast</p>
-    <thead>
-      <tr>
-        <th class="col-md-4 text-primary">Time</th>
-        <th class="col-md-4 text-primary">Weather</th>
-      </tr>
-    </thead>
+  <div id="load_weather">
     <?php
-      $prev_weather_main = ""; $i = 0;
-      do {
-        $timestamp = $weather_data['hourly'][$i]['dt'];
-        $weather_main = $weather_data['hourly'][$i]['weather'][0]['main'];
-        $homeTime = gmdate("d h:i A", $timestamp + (8*3600));
-        if($weather_main != $prev_weather_main) {
+      include './weatherTable.php';
     ?>
-    <tbody>
-      <tr>
-        <td><?=$homeTime?></td>
-        <td><?=$weather_main?></td>
-      </tr>
-    </tbody>
-    <?php
-        }
-        $prev_weather_main = $weather_main;
-        $i++;
-      } while ($i <= 24);
-    ?>
-  </table>
+  </div>
   <hr class="mt-5">
   <p class="display-6 fs-3">Schedule</p>
   <?php
@@ -100,12 +92,15 @@
       </tr>
     </thead>
     <?php
+      $arr_military_time = array();
+      $i = 0;
       include './config/dbcon.php';
       $sqlLoadCommands = "SELECT * FROM commands WHERE username = '{$_COOKIE['user']}' ORDER BY timeCommand";
       $result = $conn->query($sqlLoadCommands);
       if($result->num_rows > 0){
         while($rowCommands = $result->fetch_assoc()){
           $time = date("g:i A",strtotime($rowCommands['timeCommand']));
+          $arr_military_time[$i] = $rowCommands['timeCommand'];
     ?>
     <tbody>
       <tr>
@@ -116,10 +111,16 @@
       </tr>
     </tbody>
     <?php
+          $i++;
           include "./editCommandModal.php";
         }
       }
     ?>
+    <div id="compare_sched">
+      <?php
+        include './config/compareSchedule.php';
+      ?>
+    </div>
   </table>
 </div>
 <!-- End of Container -->

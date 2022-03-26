@@ -43,7 +43,57 @@
       include './config/showSensor.php';
     ?>
   </div>
-  <div class="fixed-bottom container-fluid mb-5">
+
+  <div class="container-fluid text-center">
+    <div class="mb-5">
+      <span class="h3">Command: </span>
+      <?php
+        if($sensorMode == "ACTIVATED") {
+          echo "
+          <form action='./config/pulleyModeCommand.php' method='POST'>
+            <div class='row mt-3'>
+              <div class='col'>
+                <button type='submit' name='submit' value='IN' class='btn btn-primary text-center w-100' disabled>IN</button>
+              </div>
+              <div class='col'>
+                <button type='submit' name='submit' value='OUT' class='btn btn-primary text-center w-100' disabled>OUT</button>
+              </div>
+            </div>
+          </form>
+          ";
+        }
+        if($sensorMode == "DEACTIVATED") {
+          echo "
+          <form action='./config/pulleyModeCommand.php' method='POST'>
+            <div class='row mt-3'>
+              <div class='col'>
+                <button type='submit' name='submit' value='IN' class='btn btn-primary text-center w-100'>IN</button>
+              </div>
+              <div class='col'>
+                <button type='submit' name='submit' value='OUT' class='btn btn-primary text-center w-100'>OUT</button>
+              </div>
+            </div>
+          </form>
+          ";
+        }
+      ?>
+    </div>
+
+    <div class="mb-3">
+      <span class="h3">Sensor Mode: </span>
+      <form action="./config/sensorModeCommand.php" method="POST">
+        <div class="row mt-3">
+          <div class="col">
+            <button type="submit" name="submit" value="1" class="btn btn-primary text-center w-100">ACTIVATED</button>
+          </div>
+          <div class="col">
+            <button type="submit" name="submit" value="0" class="btn btn-primary text-center w-100">DEACTIVATED</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
     <a href="./config/userLogout.php" class="btn btn-outline-primary btn-lg mb-3 border border-2 border-primary w-100"><i class="bi bi-box-arrow-right"></i> Logout</a>
   </div>
 </div>
