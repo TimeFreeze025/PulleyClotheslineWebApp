@@ -139,7 +139,7 @@
       
       echo "
         <div class='mb-5'>
-          <span class='h5' style='padding-left: 20px'>Sensors: </span>
+          <span class='h5' style='padding-left: 20px'>Sensor Mode: </span>
           <span class='h5 fw-light text-primary'>".$sensorMode."</span> 
         </div>
       ";

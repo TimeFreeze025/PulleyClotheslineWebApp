@@ -3,6 +3,7 @@
 	include './config/plugins.php';
   require_once "./config/weatherapi.php";
   include "./addCommandModal.php";
+  include './config/compareSchedule.php';
   
   if(!isset($_COOKIE['user'])){
     header("Location:./index.php");
@@ -20,22 +21,14 @@
       event.preventDefault();
     }
   }
-  //End of Confirm User Action
 
+  //Start of Load Weather
   $(document).ready(function(){
-    setInterval(loadWeather, 1800000);
+    setInterval(loadWeather, 600000);
   });
 
   function loadWeather() {
     $("#load_weather").load("../weatherTable.php");
-  }
-
-  $(document).ready(function(){
-    setInterval(compareSched, 1000);
-  });
-
-  function compareSched() {
-    $("#compare_sched").load("./config/compareSchedule.php");
   }
 </script>
 
@@ -64,7 +57,6 @@
     <div class="col text-center"><?=$current_temp?>°C</div>
     <div id="runningClock" class="col text-center" name="runningClock"></div>
   </div>
-  <!-- <button type="button" class="btn btn-outline-primary btn-lg mb-3 bi bi-plus-circle border float-end w-100 border-2 border-primary"> Add</button> -->
   <div id="load_weather">
     <?php
       include './weatherTable.php';
@@ -116,11 +108,6 @@
         }
       }
     ?>
-    <div id="compare_sched">
-      <?php
-        include './config/compareSchedule.php';
-      ?>
-    </div>
   </table>
 </div>
 <!-- End of Container -->

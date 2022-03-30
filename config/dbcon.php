@@ -4,6 +4,9 @@
   $password = "12252000";
   $dbname = "pulley_list";
 
+  //dbusername: id18681539_root
+  //dbpassword: L(0-n~u{l!kX(JJ[
+
   //create a database connection
   $conn = new mysqli($servername, $username, $password, $dbname);
   

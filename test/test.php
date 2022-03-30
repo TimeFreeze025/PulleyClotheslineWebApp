@@ -5,16 +5,16 @@
 
 <script>
   $(document).ready(function(){
-    setInterval(loadWeather, 1800000);
+    setInterval(loadCommands, 1000);
   });
 
-  function loadWeather() {
-    $("#load_weather").load("../weatherTable.php");
+  function loadCommands() {
+    $("#load_commands").load("./test4.php");
   }
 </script>
 
-<div id="load_weather">
+<div id="load_commands">
   <?php
-    include '../weatherTable.php';
+    include './test4.php';
   ?>
 </div>
