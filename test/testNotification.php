@@ -4,31 +4,28 @@
 <script src="../css-js/js/serviceWorker.min.js"></script>
 
 <script>
-  navigator.serviceWorker.register('sw.js');
+  navigator.serviceWorker.register('../css-js/js/sw.js');
   Notification.requestPermission(function(result) {
     if (result !== 'granted') {
       Notification.requestPermission();
     }
     if (result === 'granted') {
       navigator.serviceWorker.ready.then(function(registration) {
-        // registration.showNotification('Notification with ServiceWorker');
+        registration.showNotification('Notification with ServiceWorker');
       });
     }
   });
   function start() {
-    Push.create("PulleyClothesline", {
-      body: "Clothes are In",
+    Push.create("Hello world!", {
+      body: "Good Morning",
       timeout: 10000,
       onClick: function () {
-          window.location.href('../home.php');
+          window.focus();
           this.close();
       }
     });
-    //window.location.replace('../home.php');
   }
-
   start();
-  window.location.replace('../home.php');
 </script>
 
-<!-- <a href="javascript:void(0)" onclick="start()">Start</a> -->
+<a href="javascript:void(0)" onclick="start()">Start</a>

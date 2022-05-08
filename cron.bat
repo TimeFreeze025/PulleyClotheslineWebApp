@@ -1,0 +1,1 @@
+d:\Applications\xampp\php\php.exe -f d:\Applications\xampp\htdocs\PulleyClotheslineWebApp\config\compareSchedule.php
