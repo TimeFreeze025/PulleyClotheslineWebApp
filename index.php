@@ -3,9 +3,9 @@
 	include './config/plugins.php';
   //include './signup.php';
 
-  // if(isset($_COOKIE['user'])){
-  //   header("Location:./home.php");
-  // }
+  if(isset($_COOKIE['user'])){
+    header("Location:./home.php");
+  }
 ?>
 
 

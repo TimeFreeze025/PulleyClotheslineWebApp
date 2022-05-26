@@ -28,11 +28,10 @@
     if($schedule_time[0] === $currentTime){
       //$sqlDeleteCommand = "DELETE FROM commands WHERE username = '{$_COOKIE['user']}' AND timeCommand = '{$schedule_time[0]}'";
       //header("Location:./test/test2.php");
-      // require_once './test/test2.php';
 ?>
 
       <script>
-        navigator.serviceWorker.register('./css-js/js/sw.js');
+        navigator.serviceWorker.register('../css-js/js/sw.js');
         Notification.requestPermission(function(result) {
           if (result !== 'granted') {
             Notification.requestPermission();
@@ -57,6 +56,21 @@
       </script>
 
 <?php
+      $sensor = "command"; 
+      // echo $user_command[0];     
+      if($user_command[0] == "Retrieve-In") {
+        $value = "IN";
+      } elseif($user_command[0] == "Retrieve-Out") {
+        $value = "OUT";
+      }
+
+      $sqlUpdateData = "UPDATE data SET sensor_value = '{$value}' WHERE sensor_type = '{$sensor}'";
+      if($conn->query($sqlUpdateData) === TRUE) {
+
+      }else{
+        echo "ERROR :".$sqlUpdateData."<br>".$conn->error;
+      }
+
       $sqlDeleteCommand = "DELETE FROM commands WHERE timeCommand = '{$schedule_time[0]}'";
       if($conn->query($sqlDeleteCommand) === TRUE){
     

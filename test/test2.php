@@ -20,7 +20,7 @@
       body: "Clothes are In",
       timeout: 10000,
       onClick: function () {
-          window.location.href('../home.php');
+          // window.location.href('../home.php');
           this.close();
       }
     });
@@ -28,7 +28,7 @@
   }
 
   start();
-  window.location.replace('../home.php');
+  // window.location.replace('../home.php');
 </script>
 
-<!-- <a href="javascript:void(0)" onclick="start()">Start</a> -->
+<a href="javascript:void(0)" onclick="start()">Start</a>

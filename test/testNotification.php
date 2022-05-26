@@ -9,11 +9,11 @@
     if (result !== 'granted') {
       Notification.requestPermission();
     }
-    if (result === 'granted') {
-      navigator.serviceWorker.ready.then(function(registration) {
-        registration.showNotification('Notification with ServiceWorker');
-      });
-    }
+    // if (result === 'granted') {
+    //   navigator.serviceWorker.ready.then(function(registration) {
+    //     registration.showNotification('Notification with ServiceWorker');
+    //   });
+    // }
   });
   function start() {
     Push.create("Hello world!", {

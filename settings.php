@@ -50,7 +50,7 @@
       <?php
         if($sensorMode == "ACTIVATED") {
           echo "
-          <form action='./config/pulleyModeCommand.php' method='POST'>
+          <form action='./config/pulleyCommand.php' method='POST'>
             <div class='row mt-3'>
               <div class='col'>
                 <button type='submit' name='submit' value='IN' class='btn btn-primary text-center w-100' disabled>IN</button>
@@ -64,7 +64,7 @@
         }
         if($sensorMode == "DEACTIVATED") {
           echo "
-          <form action='./config/pulleyModeCommand.php' method='POST'>
+          <form action='./config/pulleyCommand.php' method='GET'>
             <div class='row mt-3'>
               <div class='col'>
                 <button type='submit' name='submit' value='IN' class='btn btn-primary text-center w-100'>IN</button>

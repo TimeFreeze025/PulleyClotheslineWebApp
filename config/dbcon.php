@@ -1,7 +1,7 @@
 <?php
   $servername = "localhost";
   $username = "root";
-  $password = "12252000";
+  $password = "";
   $dbname = "pulley_list";
 
   //dbusername: id18681539_root

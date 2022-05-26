@@ -19,7 +19,9 @@
               $waterSensor = "WET";
             } elseif($rowSensor['sensor_value'] == "1") {
               $waterSensor = "DRY";
-            } else {
+            } elseif($rowSensor['sensor_value'] == "DEACTIVATED") {
+              $waterSensor = "DEACTIVATED";
+            }else {
               $waterSensor = "Error";
             }
 
@@ -38,10 +40,12 @@
         if($result->num_rows > 0){
           while($rowSensor = $result->fetch_assoc()){
             //echo $rowSensor['sensor_type']. ": ".$rowSensor['sensor_value']. "<br>";
-            if($rowSensor['sensor_value'] == "") {
-              $smokeSensor = "Error";
-            } else {
+            if($rowSensor['sensor_value'] != "DEACTIVATED") {
               $smokeSensor = $rowSensor['sensor_value'];
+            } elseif($rowSensor['sensor_value'] == "DEACTIVATED") {
+              $smokeSensor = "DEACTIVATED";
+            } else {
+              $smokeSensor = "Error";
             }
             
             echo "
