@@ -4,6 +4,7 @@
   require_once "./config/weatherapi.php";
   include "./addCommandModal.php";
   include './config/compareSchedule.php';
+  date_default_timezone_set('Asia/Manila');
   
   if(!isset($_COOKIE['user'])){
     header("Location:./index.php");
